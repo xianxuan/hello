@@ -4,8 +4,9 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/nsqio/go-nsq"
 	"os"
+
+	"github.com/nsqio/go-nsq"
 )
 
 var producer *nsq.Producer
@@ -18,7 +19,7 @@ func main() {
 
 	running := true
 
-	//读取控制台输入go
+	//读取控制台输入
 	reader := bufio.NewReader(os.Stdin)
 	for running {
 		data, _, _ := reader.ReadLine()
@@ -33,8 +34,6 @@ func main() {
 			InitProducer(strIP1)
 		}
 	}
-	//关闭
-	producer.Stop()
 }
 
 // 初始化生产者
